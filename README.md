@@ -1,4 +1,5 @@
 # Deploying Fake Back-End Server & DataBase Using JSON-SERVER, GitHub, and Heroku.
+
 In this article, we will create and host a fake server that we can deal with it as a normal Back-End Server and use all the CRUD Operations using HTTP requests.
 
 # 1.Creating the Fake Server.
@@ -198,3 +199,22 @@ You will see something like this:
 
 Now, You can access and modify resources via any HTTP method
 `GET` `POST` `PUT` `PATCH` `DELETE` `OPTIONS`
+
+# 4. Creating a Pipeline.
+
+A pipeline is simply a connection between your GitHub repo and your Heroku Project.
+So, Whenever you update your `db.json` for example and push your changes to a specific branch Heroku will be listening to this branch and build your app with the updated database.
+
+- Open your dashboard on Heroku and choose your app.
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/i81x8oskjdhyj2oia2vh.JPG)
+
+- Navigate to `Deploy` tap and create a pipeline, Connect your GitHub with the fake-server repo
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/0pxjlxo43599kcehx82h.JPG)
+
+- Configure auto-deploy and choose the branch of the Pipeline
+
+![Alt Text](https://dev-to-uploads.s3.amazonaws.com/i/ns96n32z0csv0027twzi.JPG)
+
+Now whenever you push the changes to the **selected branch**, the database will be updated and can be accessed via the same base API.
